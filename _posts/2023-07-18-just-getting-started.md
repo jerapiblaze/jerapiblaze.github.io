@@ -10,7 +10,7 @@ math: true
 mermaid: false
 img_path: /assets/img/posts/2023-07-18-just-getting-started
 image:
-    path: /assets/img/posts/2023-07-18-just-getting-started/download.png
+    path: download.png
     alt: random image
 pin: false
 ---
