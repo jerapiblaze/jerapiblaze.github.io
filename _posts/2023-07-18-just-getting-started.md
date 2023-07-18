@@ -2,7 +2,7 @@
 title: Just getting started
 date: 2023-07-18 17:15:00 +0700
 categories: [Blogging, Others]
-tags: [helloworld]
+tags: [sample]
 author: j12t
 toc: true
 comments: false
