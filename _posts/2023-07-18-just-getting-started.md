@@ -8,10 +8,10 @@ toc: true # enable/disable toc
 comments: false # enable/disable comments
 math: true
 mermaid: false # diagrams image generation
-img_path: /assets/img/posts/2023-07-18-just-getting-started
+img_path: assets/img/posts/2023-07-18-just-getting-started
 # preview/banner image
 image:
-    path: /assets/img/posts/2023-07-18-just-getting-started/download.png
+    path: assets/img/posts/2023-07-18-just-getting-started/download.png
     alt: random image
 pin: false # pinned post
 ---
