@@ -8,7 +8,7 @@ toc: true # enable/disable toc
 comments: false # enable/disable comments
 math: true
 mermaid: false # diagrams image generation
-img_path: /assets/img/posts/
+img_path: /assets/img/posts/2023-07-18-just-getting-started
 # preview/banner image
 image:
     path: download.png
