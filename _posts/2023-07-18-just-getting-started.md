@@ -1,6 +1,6 @@
 ---
 title: Just getting started
-date: 2023-07-18 17:15:00 +7000
+date: 2023-07-18 17:15:00 +0700
 categories: [Blogging, Others]
 tags: [helloworld]
 authors: [j12t]
