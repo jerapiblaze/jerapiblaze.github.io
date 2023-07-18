@@ -1,6 +1,6 @@
 ---
 title: Just getting started
-date: 2023-07-18 17:15 +7000
+date: 2023-07-18 17:15:00 +7000
 categories: [Blogging, Others]
 tags: [helloworld]     # TAG names should always be lowercase
 authors: [j12t]
