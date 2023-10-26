@@ -18,9 +18,8 @@ With Conda, we can have different setups for different projects. Each setup in C
 
 In this tutorial, we will have a quick guide to commonly used command to manage and use Conda environment. If you are looking for real-world example, just jump to [this section](#real-world-examples).
 
-## Conda cheat-sheet
 
-### Using environments
+## Using environments
 
 Here are some commonly used action within an Conda environment:
 
@@ -34,7 +33,7 @@ Here are some commonly used action within an Conda environment:
 
 Python is a package in Conda, so it can be upgraded/downgraded easily. The only thing we need to do is tell Conda which version of Python to use in the environment: `conda install python=x.xx`.
 
-### Managing environments
+## Managing environments
 
 Here are some commonly used command to manage Conda environments:
 
