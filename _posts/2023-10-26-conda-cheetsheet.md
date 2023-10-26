@@ -16,7 +16,7 @@ pin: false
 
 With Conda, we can have different setups for different projects. Each setup in Conda is called an environment. In each environment is a seperated space with its own packages/executables/libraries.
 
-In this tutorial, we will have a quick guide to commonly used command to manage and use Conda environment. If you are looking for real-world example, just jump to [this section]().
+In this tutorial, we will have a quick guide to commonly used command to manage and use Conda environment. If you are looking for real-world example, just jump to [this section](#real-world-examples).
 
 # Conda cheat-sheet
 
