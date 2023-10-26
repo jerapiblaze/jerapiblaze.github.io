@@ -12,15 +12,15 @@ img_path: /assets/img/posts/2023-10-26-conda-cheatsheet
 pin: false
 ---
 
-# Introduction
+## Introduction
 
 With Conda, we can have different setups for different projects. Each setup in Conda is called an environment. In each environment is a seperated space with its own packages/executables/libraries.
 
 In this tutorial, we will have a quick guide to commonly used command to manage and use Conda environment. If you are looking for real-world example, just jump to [this section](#real-world-examples).
 
-# Conda cheat-sheet
+## Conda cheat-sheet
 
-## Using environments
+### Using environments
 
 Here are some commonly used action within an Conda environment:
 
@@ -34,7 +34,7 @@ Here are some commonly used action within an Conda environment:
 
 Python is a package in Conda, so it can be upgraded/downgraded easily. The only thing we need to do is tell Conda which version of Python to use in the environment: `conda install python=x.xx`.
 
-## Managing environments
+### Managing environments
 
 Here are some commonly used command to manage Conda environments:
 
@@ -48,7 +48,7 @@ Here are some commonly used command to manage Conda environments:
 
 It is recommended that we create seperated environment for each projects, and **never modify the `base` environment**.
 
-# Real-world examples
+## Real-world examples
 
 In this section, we will demonstates the procedure to setup and use Conda with Visual Studio Code to work with Python and Python Jupyter Notebook.
 
@@ -87,6 +87,6 @@ Another day, our project manager decided to revert to Python 3.10 for maximum co
 conda install python=3.10 -y
 ```
 
-# Summarize
+## Summarize
 
 You reached to the end of the post! Now we hope you now already have a basic knowledge about common commands to manage and use Conda environments. Happy scienctific coding.
