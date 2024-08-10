@@ -19,7 +19,7 @@ pin: false
 
 As [dkocher](https://github.com/dkocher) (contributer) commented in the issue [Appication blocked by Google for OAuth Flow](https://github.com/iterate-ch/cyberduck/issues/16178) of [CyberDuck](https://github.com/iterate-ch/cyberduck) repository, the block happen when the developers cannot obtain [CASA assessment](https://github.com/iterate-ch/cyberduck/issues/16192) in time.
 
-For now, all we can do is wait. As a workaround, the developers have posted some [documentations](https://docs.cyberduck.io/protocols/profiles/google_client_id/), but I find it pretty hard to follow. So this is my step-by-step guide to create custom Google Drive OAuth Client ID.
+For now, all we can do is wait. As a workaround, the developers have posted some [documentations](https://docs.cyberduck.io/protocols/profiles/google_client_id/), but I find it hard to follow. So this is my step-by-step guide to create custom Google Drive OAuth Client ID.
 
 # Preparation
 
@@ -33,7 +33,7 @@ Before you start, you will need:
 
 ## Create Google Drive OAuth Client
 
-Firtstly, we need to access [Google Cloud resource manager](https://console.cloud.google.com/cloud-resource-manager) and select `Create Project`.
+Firtstly, we need to log in our Google account, access [Google Cloud resource manager](https://console.cloud.google.com/cloud-resource-manager) and select `Create Project`.
 
 ![Google Cloud Resource Manager](google-cloud-resource-manager.png)
 
