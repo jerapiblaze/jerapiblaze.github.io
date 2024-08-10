@@ -103,6 +103,8 @@ Select `Appication type` as `Desktop app`, `Name` as your preferences, then `Cre
 
 Now, you will have `Cliend ID` and `Client secret`. Save that for now.
 
+![Client ID and Client Secret](client-id.png)
+
 The `Client ID` has the structure as `NUMBER-STRING.apps.googleusercontent.com`.
 
 ## Create Custom Connection Profile
