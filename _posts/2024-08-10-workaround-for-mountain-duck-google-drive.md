@@ -1,6 +1,6 @@
 ---
 title: A workaround for connecting Mountain Duck to Google Drive accounts
-date: 2024-08-10 17:15:00 +0700
+date: 2024-08-10 10:15:00 +0700
 categories: [Blogging, Tutorial, Workaround]
 tags: [mountainduck, googledrive]
 author: j12t
