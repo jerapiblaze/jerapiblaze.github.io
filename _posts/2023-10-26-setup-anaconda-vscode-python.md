@@ -10,7 +10,7 @@ math: true
 mermaid: false
 img_path: /assets/img/posts/2023-10-26-setup-anaconda-vscode-python
 image:
-    path: download.png
+    path: conda.png
     alt: random image
 pin: false
 ---
