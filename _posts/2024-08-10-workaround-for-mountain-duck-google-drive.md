@@ -53,7 +53,7 @@ Here, type `Google Drive API in the search box`, we will have 03 results that ha
 
 ![Search Google drive api](search-gdrive-api.png)
 
-![03 google drive api results](gdrive-api-result.png)
+![03 google drive api results](gdrive-api-results.png)
 
 Select [`Google Drive API`](https://console.cloud.google.com/apis/library/drive.googleapis.com), then select `Enable`.
 
@@ -71,7 +71,7 @@ Select `External` then `Create`.
 
 Fill in the required fields, use your own gmail addresses, then select `Save and Continue`.
 
-![Fill fields](fill-fileds.png)
+![Fill fields](fill-fields.png)
 
 Now, select `Add or Remove Scopes`.
 
@@ -87,7 +87,7 @@ After that, `Save and Continue`.
 
 Now, if you want to login with many accounts, select `Add Users` then add your gmail addresses. You can add up to 100 different addresses.
 
-![Save and Continue](Continue.png)
+![Save and Continue](continue.png)
 
 Select `Back to Dashboard` to finish this step.
 
