@@ -114,6 +114,12 @@ pwa:
 
 paginate: 10
 
+scholar:
+  style: ieee-with-url
+  source: ./_bibliography
+  sort_by: year
+  order: decending
+
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
