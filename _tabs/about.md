@@ -30,4 +30,4 @@ I have basic knowledge about telecommunication networks (4G, 5G,...). With the v
 
 ## CV
 
-Download PDF: {% English /assets/cvs/cv_j12t_main.pdf %}
+Download PDF: [English]({% link /assets/cvs/cv_j12t_main.pdf %})
