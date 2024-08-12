@@ -120,6 +120,9 @@ scholar:
   sort_by: year
   order: decending
 
+plugins:
+  - jemoji
+
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:

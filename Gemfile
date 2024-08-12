@@ -27,4 +27,8 @@ if RUBY_PLATFORM =~ /linux-musl/
   gem "jekyll-sass-converter", "~> 2.0"
 end
 
+# Scholar plugin
 gem 'jekyll-scholar', group: :jekyll_plugins
+
+# Jemoji (emoji short-code support)
+gem 'jemoji'

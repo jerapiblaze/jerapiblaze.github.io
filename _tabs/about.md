@@ -20,15 +20,15 @@ I have basic knowledge about telecommunication networks (4G, 5G,...). With the v
 
 ## Experiences
 
-> To be updated
+> To be updated {: .prompt-info }
 
 ## Education
 
-> To be updated
+> To be updated {: .prompt-info }
 
 ## Awards
 
-> To be updated
+> To be updated {: .prompt-info }
 
 ## CV
 
