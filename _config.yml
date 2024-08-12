@@ -115,11 +115,10 @@ pwa:
 paginate: 10
 
 scholar:
-  style: ieee-with-url
+  style: chicago-author-date
   source: ./_bibliography
   sort_by: year
   order: decending
-  bibliography_template: <abbr>[{{key}}]</abbr>{{reference}}
 
 # ------------ The following options are not recommended to be modified ------------------
 
