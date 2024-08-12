@@ -20,15 +20,24 @@ I have basic knowledge about telecommunication networks (4G, 5G,...). With the v
 
 ## Experiences
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
 > To be updated {: .prompt-info }
+<!-- markdownlint-restore -->
 
 ## Education
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
 > To be updated {: .prompt-info }
+<!-- markdownlint-restore -->
 
 ## Awards
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
 > To be updated {: .prompt-info }
+<!-- markdownlint-restore -->
 
 ## CV
 
