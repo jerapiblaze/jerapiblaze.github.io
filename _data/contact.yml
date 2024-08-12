@@ -3,16 +3,16 @@
 - type: github
   icon: "fab fa-github"
 
-- type: twitter
-  icon: "fab fa-twitter"
+# - type: twitter
+#   icon: "fab fa-twitter"
 
-- type: email
-  icon: "fas fa-envelope"
-  noblank: true # open link in current tab
+# - type: email
+#   icon: "fas fa-envelope"
+#   noblank: false # open link in current tab
 
 - type: rss
   icon: "fas fa-rss"
-  noblank: true
+  noblank: false
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
@@ -21,7 +21,7 @@
 #
 # - type: linkedin
 #   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
-#   url:  ''                  # Fill with your Linkedin homepage
+#   url:  'https://www.linkedin.com/in/mthanh310/'                  # Fill with your Linkedin homepage
 #
 # - type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
