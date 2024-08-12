@@ -18,9 +18,9 @@ timezone: Asia/Ho_Chi_Minh
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: jer7nett # the main title
+title: Minh-Thanh # the main title
 
-tagline: The Persional blog of Minh Thanh # it will display as the sub-title
+tagline: The Persional blog of Minh-Thanh # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   My personal blogs.
