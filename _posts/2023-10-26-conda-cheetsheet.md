@@ -45,6 +45,10 @@ Here are some commonly used command to manage Conda environments:
 
 - To delete an environment: `conda remove -n environment_name`.
 
+- From `.yaml` file (import): `conda create -n environment_name -f yaml_file.yaml`
+
+- Export environment: `conda env list > environment.yaml`
+
 It is recommended that we create seperated environment for each projects, and **never modify the `base` environment**.
 
 ## Real-world examples
