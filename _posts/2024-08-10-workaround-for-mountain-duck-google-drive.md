@@ -152,6 +152,12 @@ Replace `CLIENT_SECRET`, `NUMBER`, `STRING` with your own credentials from `Clie
 {: .prompt-tip }
 <!-- markdownlint-restore -->
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+> Don't edit any fields in line `22` and above !!!
+{: .prompt-tip }
+<!-- markdownlint-warning -->
+
 Save the file with the extension `.cyberduckprofile`
 
 ![Save as cyberduckprofile](save-as-cyberduckprofile.png)
