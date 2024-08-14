@@ -158,6 +158,10 @@ Replace `CLIENT_SECRET`, `NUMBER`, `STRING` with your own credentials from `Clie
 {: .prompt-warning }
 <!-- markdownlint-restore -->
 
+Your file should look like this:
+
+![Sample of final text file](sample-file.png)
+
 Save the file with the extension `.cyberduckprofile`
 
 ![Save as cyberduckprofile](save-as-cyberduckprofile.png)
