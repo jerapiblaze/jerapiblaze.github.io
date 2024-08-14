@@ -146,6 +146,12 @@ Open the text editor and paste the following lines:
 
 Replace `CLIENT_SECRET`, `NUMBER`, `STRING` with your own credentials from `Client ID` and `Client secret`.
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+> The fields you need to edit are: `OAuth Client ID` (line `24`), `OAuth Client Secret` (line `26`), `OAuth Redirect Url` (line `28`)
+{: .prompt-tip }
+<!-- markdownlint-restore -->
+
 Save the file with the extension `.cyberduckprofile`
 
 ![Save as cyberduckprofile](save-as-cyberduckprofile.png)
