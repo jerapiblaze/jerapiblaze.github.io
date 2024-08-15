@@ -85,7 +85,13 @@ After that, `Save and Continue`.
 
 ![Save and Continue](save-and-continue.png)
 
-Now, if you want to login with many accounts, select `Add Users` then add your gmail addresses. You can add up to 100 different addresses.
+Now, if you want to login with many accounts, select `Add Users` then add your 2nd, 3rd, 4th, ... gmail addresses. 
+
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+> With this, you don't need to create different OAuth clients for every g-account. You can add up to `100` different addresses.
+{: .prompt-tip }
+<!-- markdownlint-restore -->
 
 ![Save and Continue](continue.png)
 
