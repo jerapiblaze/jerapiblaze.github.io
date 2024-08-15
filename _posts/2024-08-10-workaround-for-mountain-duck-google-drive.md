@@ -85,7 +85,13 @@ After that, `Save and Continue`.
 
 ![Save and Continue](save-and-continue.png)
 
-Now, if you want to login with many accounts, select `Add Users` then add your 2nd, 3rd, 4th, ... gmail addresses. 
+Now, select `Add Users` then add your primary, 2nd, 3rd, 4th, ... gmail addresses. 
+
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+> Don't forget to add your own address :wink:
+{: .prompt-tip }
+<!-- markdownlint-restore -->
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
