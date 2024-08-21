@@ -31,6 +31,10 @@ Before you start, you will need:
 
 # Main content
 
+## OFFICIAL workaround from developers
+
+The developers of Mountain Duck have released a detailed documentation: [Setup a Custom OAuth Client ID for Google Drive & Google Cloud Storage](https://docs.cyberduck.io/tutorials/custom_oauth_client_id/).
+
 ## Create Google Drive OAuth Client
 
 Firtstly, we need to log in our Google account, access [Google Cloud resource manager](https://console.cloud.google.com/cloud-resource-manager) and select `Create Project`.
