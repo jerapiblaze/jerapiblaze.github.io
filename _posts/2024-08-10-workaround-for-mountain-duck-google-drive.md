@@ -21,6 +21,13 @@ As [dkocher](https://github.com/dkocher) (contributer) commented in the issue [A
 
 For now, all we can do is wait. As a workaround, the developers have posted some [documentations](https://docs.cyberduck.io/protocols/profiles/google_client_id/), but I find it hard to follow. So this is my step-by-step guide to create custom Google Drive OAuth Client ID.
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+> ## OFFICIAL workaround from developers
+> The developers of Mountain Duck have released a detailed documentation: [Setup a Custom OAuth Client ID for Google Drive & Google Cloud Storage](https://docs.cyberduck.io/tutorials/custom_oauth_client_id/).
+{: .prompt-info }
+<!-- markdownlint-restore -->
+
 # Preparation
 
 Before you start, you will need:
@@ -30,10 +37,6 @@ Before you start, you will need:
 - 01 text editor (in my case, Notepad.exe will be my buddy)
 
 # Main content
-
-## OFFICIAL workaround from developers
-
-The developers of Mountain Duck have released a detailed documentation: [Setup a Custom OAuth Client ID for Google Drive & Google Cloud Storage](https://docs.cyberduck.io/tutorials/custom_oauth_client_id/).
 
 ## Create Google Drive OAuth Client
 
