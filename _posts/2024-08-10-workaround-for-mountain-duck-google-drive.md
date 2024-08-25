@@ -8,7 +8,7 @@ toc: true
 comments: true
 math: true
 mermaid: false
-img_path: /assets/img/posts/2024-08-10-workaround-for-mountain-duck-google-drive
+media_subpath: /assets/img/posts/2024-08-10-workaround-for-mountain-duck-google-drive
 image:
     path: blocked.png
     alt: google blocked mountain duck
