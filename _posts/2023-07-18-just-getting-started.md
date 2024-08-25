@@ -8,7 +8,7 @@ toc: true
 comments: false
 math: true
 mermaid: false
-img_path: /assets/img/posts/2023-07-18-just-getting-started
+media_subpath: /assets/img/posts/2023-07-18-just-getting-started
 image:
     path: download.png
     alt: random image

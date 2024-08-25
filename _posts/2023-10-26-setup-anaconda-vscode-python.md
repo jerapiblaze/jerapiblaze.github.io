@@ -8,7 +8,7 @@ toc: true
 comments: true
 math: true
 mermaid: false
-img_path: /assets/img/posts/2023-10-26-setup-anaconda-vscode-python
+media_subpath: /assets/img/posts/2023-10-26-setup-anaconda-vscode-python
 image:
     path: conda.png
     alt: random image

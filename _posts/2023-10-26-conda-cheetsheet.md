@@ -8,7 +8,7 @@ toc: true
 comments: false
 math: true
 mermaid: false
-img_path: /assets/img/posts/2023-10-26-conda-cheatsheet
+media_subpath: /assets/img/posts/2023-10-26-conda-cheatsheet
 pin: false
 ---
 
