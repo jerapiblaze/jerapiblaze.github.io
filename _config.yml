@@ -115,7 +115,7 @@ pwa:
 paginate: 10
 
 scholar:
-  style: chicago-author-date
+  style: ieee-transactions-on-medical-imaging
   source: ./_bibliography
   sort_by: year
   order: decending
