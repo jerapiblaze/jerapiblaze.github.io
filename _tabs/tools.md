@@ -16,7 +16,7 @@ I often forgot to press "Unmute" button on calls or meetings due to there're no 
 
 ![micmute-indicator in action](https://raw.githubusercontent.com/jerapiblaze/micmute-indicator/v1.0/docs/img/demo.png)
 
-<i class="fa-brands fa-github"></i> [Source code](https://github.com/jerapiblaze/micmute-indicator)
+<p><i class="fa-brands fa-github"></i> <a target="_blank" href="https://github.com/jerapiblaze/micmute-indicator">Source code</a></p>
 
 ## Hust-hotspot-autologin
 
@@ -24,4 +24,4 @@ I'm tired about our lab's internal network at HUST being disconnected and requir
 
 ![hust-hotspot-autologin source code](https://raw.githubusercontent.com/jerapiblaze/hust-hotspot-autologin/main/docs/demobash.png)
 
-<i class="fa-brands fa-github"></i> [Source code](https://github.com/jerapiblaze/hust-hotspot-autologin)
+<p><i class="fa-brands fa-github"></i> <a target="_blank" href="https://github.com/jerapiblaze/hust-hotspot-autologin">Source code</a></p>
