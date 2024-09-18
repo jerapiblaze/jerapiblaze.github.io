@@ -1,7 +1,6 @@
 ---
 icon: fa-solid fa-toolbox
 title: My tiny-tools
-layout: post
 order: 2
 toc: true
 math: true
