@@ -13,7 +13,7 @@ This is my list of home-made tools, built for my own need.
 
 I often forgot to press "Unmute" button on calls or meetings due to there're no visual indicator on my laptop. This is the indicator for "Muted" state, only shown when there's an app using the microphone.
 
-![micmute-indicator in action](https://raw.githubusercontent.com/jerapiblaze/micmute-indicator/v1.0/docs/img/demo2.png)
+![micmute-indicator in action](https://raw.githubusercontent.com/jerapiblaze/micmute-indicator/master/docs/img/demo2.png)
 
 <p><i class="fa-brands fa-github"></i> <a target="_blank" href="https://github.com/jerapiblaze/micmute-indicator">Source code</a></p>
 
