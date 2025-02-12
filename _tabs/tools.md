@@ -9,6 +9,8 @@ mermaid: true
 
 This is my list of home-made tools, built for my own need.
 
+For quick snippets, checkout <p><i class="fa-brands fa-github"></i> <a target="_blank" href="https://gist.github.com/jerapiblaze">My Gists Repository</a></p>.
+
 ## Micmute-indicator
 
 I often forgot to press "Unmute" button on calls or meetings due to there're no visual indicator on my laptop. This is the indicator for "Muted" state, only shown when there's an app using the microphone.
