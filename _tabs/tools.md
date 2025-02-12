@@ -9,7 +9,7 @@ mermaid: true
 
 This is my list of home-made tools, built for my own need.
 
-For quick snippets, checkout <p><i class="fa-brands fa-github"></i> <a target="_blank" href="https://gist.github.com/jerapiblaze">My Gists Repository</a></p>.
+For quick snippets, checkout <i class="fa-brands fa-github"></i> <a target="_blank" href="https://gist.github.com/jerapiblaze">My Gists Repository</a>.
 
 ## Micmute-indicator
 
