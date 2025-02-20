@@ -20,7 +20,7 @@ timezone: Asia/Ho_Chi_Minh
 
 title: Minh-Thanh # the main title
 
-tagline: The Persional blog of Minh-Thanh # it will display as the sub-title
+tagline: Research and Chill # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   My personal blogs.
@@ -31,8 +31,8 @@ url: ""
 github:
   username: jerapiblaze # change to your github username
 
-twitter:
-  username: thanhcrazy0310 # change to your twitter username
+# twitter:
+#   username: thanhcrazy0310 # change to your twitter username
 
 social:
   # Change to your full name.
@@ -41,7 +41,7 @@ social:
   email: minhthanh.31oct2k3@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/thanhcrazy0310 # change to your twitter homepage
+    # - https://twitter.com/thanhcrazy0310 # change to your twitter homepage
     - https://github.com/jerapiblaze # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
