@@ -23,6 +23,12 @@ For now, all we can do is wait. As a workaround, the developers have posted some
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
+> Update: The problem is now resolved. This post stays here in case of similar problem occurs again.
+{: .prompt-tip }
+<!-- markdownlint-restore -->
+
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
 > ## OFFICIAL workaround from developers
 > The developers of Mountain Duck have released a detailed documentation: [Setup a Custom OAuth Client ID for Google Drive & Google Cloud Storage](https://docs.cyberduck.io/tutorials/custom_oauth_client_id/).
 {: .prompt-info }
