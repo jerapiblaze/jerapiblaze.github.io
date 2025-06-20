@@ -80,41 +80,57 @@ Go to the **Triggers** tab and add this:
 Paste this entire script into the Cloudflare Worker editor:
 
 ```js
-// Main logic
+const DEBUG=false;
+const COOLDOWN_TIME=5000;
+
 async function run(env) {
   const token = await getAccessToken(env);
-  const docId = env.DOC_ID;
-  const webhook = env.DISCORD_WEBHOOK;
-  
-  const res = await fetch(`https://docs.googleapis.com/v1/documents/${docId}`, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
-  if (!res.ok) {
-    console.error("Failed to fetch doc:", await res.text());
-    return "ERROR";
-  }
-  const data = await res.json();
-  const text = data.body.content
-    .map(e => e.paragraph?.elements?.map(el => el.textRun?.content || "").join("") || "")
-    .join("");
-  
-  const now = new Date().toISOString();
-  const last = await env.DOC_CACHE.get("last");
-  const diff = getGitDiff(last || "", text);
-  if (diff && diff.length > 0) {  
-    await fetch(webhook, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content: `📄 Google Doc updated at ${now}\n\`\`\`diff\n${diff.slice(0, 1800)}\n...\`\`\`` }) // Discord limit: 2000 chars
+    const docId = env.DOC_ID;
+    const webhook = env.DISCORD_WEBHOOK;
+
+    const res = await fetch(`https://docs.googleapis.com/v1/documents/${docId}`, {
+      headers: { Authorization: `Bearer ${token}` }
     });
-    await env.DOC_CACHE.put("last", text);
-    return `${now} | OK, something changed!\n${diff}`;
-  } else {
-    return `${now} | OK, nothing changed.`
+
+    if (!res.ok) {
+      console.error("Failed to fetch doc:", await res.text());
+      return "ERROR";
     }
+
+    const data = await res.json();
+    const text = data.body.content
+      .map(e => e.paragraph?.elements?.map(el => el.textRun?.content || "").join("") || "")
+      .join("");
+
+    const now = new Date().toISOString();
+    const last = await env.DOC_CACHE.get("last");
+    const diff = getGitDiff(last || "", text);
+    if (diff && diff.length > 0 || DEBUG) {  
+      const diff_chunks = chunkArray(diff, 5);
+      for (let i=0; i < diff_chunks.length; i++){
+        var diff_chunk = diff_chunks[i];
+        var diff_chunk_str = diff_chunk.join("\n");
+        var response = await fetch(webhook, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ content: `📄 The document updated at ${now} [${i+1}/${diff_chunks.length}]\n\`\`\`diff\n${diff_chunk_str.slice(0, 1800)}\n\`\`\`` }) // Discord limit: 2000 chars
+        });
+        if (response.status == 429){
+          await sleep(COOLDOWN_TIME);
+          console.warn(`Rate limit, retry in ${COOLDOWN_TIME}`);
+        }
+        if (i % 30 == 0){
+          await sleep(1000);
+        }
+      } 
+      await env.DOC_CACHE.put("last", text);
+      return `${now} | OK, something changed!\n${diff.join("\n")}`;
+    }
+    else {
+      return `${now} | OK, nothing changed.`
+    }     
 }
 
-// Get normal diff
 function getDiff(oldText, newText) {
   const oldLines = oldText.split("\n");
   const newLines = newText.split("\n");
@@ -125,11 +141,9 @@ function getDiff(oldText, newText) {
       changes.push(`🔸 Line ${i + 1} changed:\n- ${oldLines[i] || ""}\n+ ${newLines[i]}`);
     }
   }
-
-  return changes.length ? changes.join("\n\n") : null;
+  return changes.length ? changes : null;
 }
 
-// Git-like diff
 function getGitDiff(oldText, newText) {
   const oldLines = oldText.split("\n");
   const newLines = newText.split("\n");
@@ -141,6 +155,9 @@ function getGitDiff(oldText, newText) {
     const newLine = newLines[i] || "";
 
     if (oldLine === newLine) {
+      if (DEBUG){
+        diff.push(`${oldLine}`);
+      }
       continue;
     } else {
       if (oldLine) diff.push(`- ${oldLine}`);
@@ -148,10 +165,23 @@ function getGitDiff(oldText, newText) {
     }
   }
 
-  return diff.join("\n");
+  return diff;
 }
 
-// Get OAuth access token 
+function sleep(n) {
+  return new Promise(resolve => setTimeout(resolve, n));
+}
+
+function chunkArray(array, size) {
+  const chunks = [];
+  let index = 0;
+  while (index < array.length) {
+    chunks.push(array.slice(index, index + size));
+    index += size;
+  }
+  return chunks;
+}
+
 async function getAccessToken(env) {
   const cached = await env.DOC_CACHE.get("access_token", { type: "json" });
   const now = Math.floor(Date.now() / 1000);
@@ -210,14 +240,11 @@ function str2ab(pem) {
   return bytes.buffer;
 }
 
-// Export functions
 export default {
-  // Run on demand
   async fetch(request, env, ctx) {
     const result = await run(env);
     return new Response("✅ Ran Worker logic: " + result);
   },
-  // Run on schedule
   async scheduled(event, env, ctx) {
     await run(env);
   }
