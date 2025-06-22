@@ -53,9 +53,15 @@ A quick TicTacToe game on a single C++ source code file.
 <p><i class="fa-brands fa-github"></i> <a target="_blank" href="https://gist.github.com/jerapiblaze/882548adcf7a83d193bb69124533707b">Source code</a></p>
 
 
-## PlainText [Rainmeter skin]
+## PlainText & DynamicWallpaper [Rainmeter skin]
 
-A <a target="_blank" href="https://www.rainmeter.net/">Rainmeter</a> skin show various information (just for decorating the desktop) as plain text format.
+A <a target="_blank" href="https://www.rainmeter.net/">Rainmeter</a> skins collections made for my own need.
+
+- `plainText`: show various information (just for decorating the desktop) as plain text format. 
+- `dynamicBackground`: auto dark/light theme based on various settings.
+- `powermeasure`: a floatie measure resource usage (Battery level, CPU, RAM, network)
+- `smallclock`: a clock which float on top
+- any many other skins which I abandoned long ago...
 
 ![plainText demo](plainText-demo.png)
 
