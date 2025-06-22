@@ -244,10 +244,12 @@ function str2ab(pem) {
 export default {
   async fetch(request, env, ctx) {
     const result = await run(env);
+    console.log(result);
     return new Response("✅ Ran Worker logic: " + result);
   },
   async scheduled(event, env, ctx) {
-    await run(env);
+    const result = await run(env);
+    console.log(result);
   }
 }
 
