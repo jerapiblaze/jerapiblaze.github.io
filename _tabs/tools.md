@@ -51,3 +51,12 @@ A quick TicTacToe game on a single C++ source code file.
 ![tictactoe demo](tictactoe.png)
 
 <p><i class="fa-brands fa-github"></i> <a target="_blank" href="https://gist.github.com/jerapiblaze/882548adcf7a83d193bb69124533707b">Source code</a></p>
+
+
+## PlainText [Rainmeter skin]
+
+A <a target="_blank" href="https://www.rainmeter.net/">Rainmeter</a> skin show various information (just for decorating the desktop) as plain text format.
+
+![plainText demo](plainText-demo.png)
+
+<p><i class="fa-solid fa-droplet"></i> <a target="_blank" href="/assets/files/plainText_0.1.rmskin">Download skin</a></p>
