@@ -115,6 +115,7 @@ async function run(env) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ content: `📄 The document updated at ${now} [${i+1}/${diff_chunks.length}]\n\`\`\`diff\n${diff_chunk_str.slice(0, 1800)}\n\`\`\`` }) // Discord limit: 2000 chars
         });
+        await sleep(100);
         if (response.status == 429){
           await sleep(COOLDOWN_TIME);
           console.warn(`Rate limit, retry in ${COOLDOWN_TIME}`);
