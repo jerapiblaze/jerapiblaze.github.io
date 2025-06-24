@@ -104,31 +104,41 @@ async function run(env) {
 
     const now = new Date().toISOString();
     const last = await env.DOC_CACHE.get("last");
+    const lastDiff = await env.DOC_CACHE.get("lastDiff");
     const diff = getGitDiff(last || "", text);
-    if (diff && diff.length > 0 || DEBUG) {  
-      const diff_chunks = chunkArray(diff, 5);
-      for (let i=0; i < diff_chunks.length; i++){
+    if (diff && diff.length > 0 || DEBUG) { 
+      var chunk_size = 10;
+      var diff_chunks = chunkArray(diff, chunk_size);
+      while (diff_chunks.length > 45){
+        chunk_size += 2;
+        diff_chunks = chunkArray(diff, chunk_size);
+      }
+      var i = 0;
+      while (i < diff_chunks.length){
         var diff_chunk = diff_chunks[i];
         var diff_chunk_str = diff_chunk.join("\n");
         var response = await fetch(webhook, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ content: `📄 The document updated at ${now} [${i+1}/${diff_chunks.length}]\n\`\`\`diff\n${diff_chunk_str.slice(0, 1800)}\n\`\`\`` }) // Discord limit: 2000 chars
+          body: JSON.stringify({ content: `📄 The document updated at ${now} [${i+1}/${diff_chunks.length}]\n\`\`\`diff\n${diff_chunk_str.slice(0, 1800)}\n${'' ? diff_chunk_str.length < 1800 : '...'}\`\`\`` }) // Discord limit: 2000 chars
         });
         await sleep(100);
         if (response.status == 429){
-          await sleep(COOLDOWN_TIME);
-          console.warn(`Rate limit, retry in ${COOLDOWN_TIME}`);
+          const timeout = Number(response.headers.get('Retry-After'));
+          console.warn(`[${i+1}/${diff_chunks.length}] Rate limit (retry after ${timeout}), retry in ${timeout+10}`);
+          await sleep(timeout+10);
         }
         if (i % 30 == 0){
           await sleep(1000);
         }
-      } 
+        i++;
+      }
       await env.DOC_CACHE.put("last", text);
+      await env.DOC_CACHE.put("lastDiff", diff.join("\n"));
       return `${now} | OK, something changed!\n${diff.join("\n")}`;
     }
     else {
-      return `${now} | OK, nothing changed.`
+      return `${now} | OK, nothing changed. LastDiff:\n${lastDiff}`;
     }     
 }
 
@@ -169,8 +179,8 @@ function getGitDiff(oldText, newText) {
   return diff;
 }
 
-function sleep(n) {
-  return new Promise(resolve => setTimeout(resolve, n));
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function chunkArray(array, size) {
@@ -252,6 +262,7 @@ export default {
     console.log(result);
   }
 }
+
 
 ```
 
