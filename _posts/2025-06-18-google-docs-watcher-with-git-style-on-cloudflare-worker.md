@@ -80,7 +80,7 @@ Go to the **Triggers** tab and add this:
 Paste this entire script into the Cloudflare Worker editor:
 
 ```js
-const DEBUG=false;
+const DEBUG=true;
 const COOLDOWN_TIME=5000;
 
 async function run(env) {
@@ -105,41 +105,75 @@ async function run(env) {
     const now = new Date().toISOString();
     const last = await env.DOC_CACHE.get("last");
     const lastDiff = await env.DOC_CACHE.get("lastDiff");
-    const diff = getGitDiff(last || "", text);
-    if (diff && diff.length > 0 || DEBUG) { 
-      var chunk_size = 10;
-      var diff_chunks = chunkArray(diff, chunk_size);
-      while (diff_chunks.length > 45){
-        chunk_size += 2;
-        diff_chunks = chunkArray(diff, chunk_size);
-      }
-      var i = 0;
-      while (i < diff_chunks.length){
-        var diff_chunk = diff_chunks[i];
-        var diff_chunk_str = diff_chunk.join("\n");
-        var response = await fetch(webhook, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ content: `📄 The document updated at ${now} [${i+1}/${diff_chunks.length}]\n\`\`\`diff\n${diff_chunk_str.slice(0, 1800)}\n${'' ? diff_chunk_str.length < 1800 : '...'}\`\`\`` }) // Discord limit: 2000 chars
+    const changed = isChanged(last || "", text);
+    const diff = getGitDiff(last || "", text, true);
+    if (changed || DEBUG){
+      const diff_str = diff.join("\n");
+      const boundary = "----WebKitFormBoundary" + Math.random().toString(16).slice(2);
+      const body =`--${boundary}\rContent-Disposition: form-data; name="payload_json"\r\r${JSON.stringify({ content: `📄 Google Doc updated at ${now}` })}\r--${boundary}\rContent-Disposition: form-data; name="file"; filename="diffs.diff"\rContent-Type: text/plain\r\r${diff_str}\r--${boundary}--`;
+      var response_code = -1;
+      var tries = 3;
+      while (response_code !== 200 && tries > 0){
+        var response = await fetch(env.DISCORD_WEBHOOK, {
+        method: "POST",
+        headers: {
+          "Content-Type": `multipart/form-data; boundary=${boundary}`
+        },
+        body
         });
-        await sleep(100);
         if (response.status == 429){
           const timeout = Number(response.headers.get('Retry-After'));
-          console.warn(`[${i+1}/${diff_chunks.length}] Rate limit (retry after ${timeout}), retry in ${timeout+10}`);
+          console.warn(`Rate limit (retry after ${timeout}), retry in ${timeout+10}`);
           await sleep(timeout+10);
         }
-        if (i % 30 == 0){
-          await sleep(1000);
+        response_code = response.status;
+        tries--;
+        if (tries <= 0){
+          console.error(response_code);
         }
-        i++;
       }
       await env.DOC_CACHE.put("last", text);
       await env.DOC_CACHE.put("lastDiff", diff.join("\n"));
       return `${now} | OK, something changed!\n${diff.join("\n")}`;
-    }
-    else {
+    } else {
       return `${now} | OK, nothing changed. LastDiff:\n${lastDiff}`;
-    }     
+    }
+    
+    // const diff = getGitDiff(last || "", text);
+    // if (diff && diff.length > 0 || DEBUG) { 
+    //   var chunk_size = 10;
+    //   var diff_chunks = chunkArray(diff, chunk_size);
+    //   while (diff_chunks.length > 45){
+    //     chunk_size += 2;
+    //     diff_chunks = chunkArray(diff, chunk_size);
+    //   }
+    //   var i = 0;
+    //   while (i < diff_chunks.length){
+    //     var diff_chunk = diff_chunks[i];
+    //     var diff_chunk_str = diff_chunk.join("\n");
+    //     var response = await fetch(webhook, {
+    //       method: "POST",
+    //       headers: { "Content-Type": "application/json" },
+    //       body: JSON.stringify({ content: `📄 The document updated at ${now} [${i+1}/${diff_chunks.length}]\n\`\`\`diff\n${diff_chunk_str.slice(0, 1800)}\n${'' ? diff_chunk_str.length < 1800 : '...'}\`\`\`` }) // Discord limit: 2000 chars
+    //     });
+    //     await sleep(100);
+    //     if (response.status == 429){
+    //       const timeout = Number(response.headers.get('Retry-After'));
+    //       console.warn(`[${i+1}/${diff_chunks.length}] Rate limit (retry after ${timeout}), retry in ${timeout+10}`);
+    //       await sleep(timeout+10);
+    //     }
+    //     if (i % 30 == 0){
+    //       await sleep(1000);
+    //     }
+    //     i++;
+    //   }
+    //   await env.DOC_CACHE.put("last", text);
+    //   await env.DOC_CACHE.put("lastDiff", diff.join("\n"));
+    //   return `${now} | OK, something changed!\n${diff.join("\n")}`;
+    // }
+    // else {
+    //   return `${now} | OK, nothing changed. LastDiff:\n${lastDiff}`;
+    // }     
 }
 
 function getDiff(oldText, newText) {
@@ -149,13 +183,26 @@ function getDiff(oldText, newText) {
 
   for (let i = 0; i < newLines.length; i++) {
     if (oldLines[i] !== newLines[i]) {
-      changes.push(`🔸 Line ${i + 1} changed:\n- ${oldLines[i] || ""}\n+ ${newLines[i]}`);
+      changes.push(`Line ${i + 1} changed:\n- ${oldLines[i] || ""}\n+ ${newLines[i]}`);
     }
   }
   return changes.length ? changes : null;
 }
 
-function getGitDiff(oldText, newText) {
+function isChanged(oldText, newText){
+  const oldLines = oldText.split("\n");
+  const newLines = newText.split("\n");
+  const changes = [];
+
+  for (let i = 0; i < newLines.length; i++) {
+    if (oldLines[i] !== newLines[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function getGitDiff(oldText, newText, includeUnchanged=false) {
   const oldLines = oldText.split("\n");
   const newLines = newText.split("\n");
   const diff = [];
@@ -166,8 +213,9 @@ function getGitDiff(oldText, newText) {
     const newLine = newLines[i] || "";
 
     if (oldLine === newLine) {
-      if (DEBUG){
-        diff.push(`${oldLine}`);
+      if (DEBUG || includeUnchanged){
+        if (oldLine.startsWith("-") || oldLine.startsWith("+")){}
+        diff.push(` ${oldLine}`);
       }
       continue;
     } else {
