@@ -196,10 +196,10 @@ function isChanged(oldText, newText){
 
   for (let i = 0; i < newLines.length; i++) {
     if (oldLines[i] !== newLines[i]) {
-      return false;
+      return true;
     }
   }
-  return true;
+  return false;
 }
 
 function getGitDiff(oldText, newText, includeUnchanged=false) {
