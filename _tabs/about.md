@@ -21,29 +21,4 @@ I have basic knowledge about telecommunication networks (4G, 5G,...). With the v
 
 ## CV
 
-Download PDF: [English]({% link /assets/cvs/CV_v2.pdf %})
-
-## Experiences
-
-<!-- markdownlint-capture -->
-<!-- markdownlint-disable -->
-> To be updated 
-{: .prompt-info }
-<!-- markdownlint-restore -->
-
-## Education
-
-<!-- markdownlint-capture -->
-<!-- markdownlint-disable -->
-> To be updated
-{: .prompt-info }
-<!-- markdownlint-restore -->
-
-## Awards
-
-<!-- markdownlint-capture -->
-<!-- markdownlint-disable -->
-> To be updated
-{: .prompt-info }
-<!-- markdownlint-restore -->
-
+Download PDF: [English]({% link /assets/cvs/MinhThanh_Nguyen_CV_latest.pdf %})
