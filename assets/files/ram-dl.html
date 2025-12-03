@@ -367,7 +367,7 @@
         </div>
 
         <!-- DDR5 - 12 GB -->
-      <div class="card">
+        <div class="card">
           <div class="badge">
             <div class="chip"></div>
             <span>Expensive Memoria</span>
@@ -394,40 +394,40 @@
           <div class="note">Option for <i>(rich)</i> early adopters and enthusiasts.</div>
         </div>
 
-                <!-- DDR5 - 48 GB -->
-                <div class="card" style="opacity: 0.6; pointer-events: none; position: relative;">
-                  <div class="badge">
-                    <div class="chip"></div>
-                    <span>Unavailable</span>
-                  </div>
-                  <div class="plan-title">48 GB</div>
-                  <div class="specs">
-                    <div class="spec">
-                      <span class="spec-label">Type</span>
-                      <span class="spec-value">DDR5-4800</span>
-                    </div>
-                    <div class="spec">
-                      <span class="spec-label">Timings</span>
-                      <span class="spec-value">30-36-40-42</span>
-                    </div>
-                    <div class="spec">
-                      <span class="spec-label">Voltage</span>
-                      <span class="spec-value">1.1V</span>
-                    </div>
-                  </div>
-                  <div class="cta">
-                    <button class="btn" disabled>Not available</button>
-                  </div>
-                  <div class="note">This option is temporarily unavailable due to market conditions.</div>
+        <!-- DDR5 - 48 GB -->
+        <div class="card" style="opacity: 0.6; pointer-events: none; position: relative;">
+          <div class="badge">
+            <div class="chip"></div>
+            <span>Unavailable</span>
+          </div>
+          <div class="plan-title">48 GB</div>
+          <div class="specs">
+            <div class="spec">
+              <span class="spec-label">Type</span>
+              <span class="spec-value">DDR5-4800</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Timings</span>
+              <span class="spec-value">30-36-40-42</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Voltage</span>
+              <span class="spec-value">1.1V</span>
+            </div>
+          </div>
+          <div class="cta">
+            <button class="btn" disabled>Not available</button>
+          </div>
+          <div class="note">This option is temporarily unavailable due to market conditions.</div>
 
-                  <!-- Warning ribbon -->
-                  <span class="ribbon" style="
+          <!-- Warning ribbon -->
+          <span class="ribbon" style="
                                         background: linear-gradient(135deg, #ff4d4d, #ff7d7d);
                                         box-shadow: 0 10px 24px rgba(255,77,77,0.35);
                                       ">
-                    Unavailable
-                  </span>
-                </div>
+            Unavailable
+          </span>
+        </div>
 
         <!-- DDR5 - 64 GB -->
         <div class="card" style="opacity: 0.6; pointer-events: none; position: relative;">
@@ -495,116 +495,116 @@
           </span>
         </div>
 
-        </div>
-
-
-
       </div>
-    </div>
 
-    <footer>
-      This is a parody page. You can’t actually download RAM.
-    </footer>
+
+
+    </div>
   </div>
 
-<script>
-  function selectPlan(plan) {
-    // Hide any visible "Added!" messages, if present
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-      const msg = card.querySelector('.success-txt');
-      if (msg) msg.style.display = 'none';
-    });
+  <footer>
+    This is a parody page. You can’t actually download RAM.
+  </footer>
+  </div>
 
-    // Find the selected card
-    const card = Array.from(cards).find(
-      c => c.querySelector('.plan-title')?.textContent.trim() === plan
-    );
-    if (!card) return;
+  <script>
+    function selectPlan(plan) {
+      // Hide any visible "Added!" messages, if present
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const msg = card.querySelector('.success-txt');
+        if (msg) msg.style.display = 'none';
+      });
 
-    // If the card is visually disabled (e.g., DDR5), show a different alert and exit
-    const isDisabled =
-      getComputedStyle(card).pointerEvents === 'none' ||
-      card.querySelector('.btn')?.disabled;
-    if (isDisabled) {
-      alert('DDR5 is not available at the moment due to high demand and prices.');
-      return;
-    }
-
-    // Show "Added!" only if the element exists
-    const msg = card.querySelector('.success-txt');
-    if (msg) {
-      msg.style.display = 'inline-block';
-      msg.animate(
-        [
-          { opacity: 0, transform: 'translateY(4px)' },
-          { opacity: 1, transform: 'translateY(0)' }
-        ],
-        { duration: 180, easing: 'ease-out' }
+      // Find the selected card
+      const card = Array.from(cards).find(
+        c => c.querySelector('.plan-title')?.textContent.trim() === plan
       );
+      if (!card) return;
+
+      // If the card is visually disabled (e.g., DDR5), show a different alert and exit
+      const isDisabled =
+        getComputedStyle(card).pointerEvents === 'none' ||
+        card.querySelector('.btn')?.disabled;
+      if (isDisabled) {
+        alert('DDR5 is not available at the moment due to high demand and prices.');
+        return;
+      }
+
+      // Show "Added!" only if the element exists
+      const msg = card.querySelector('.success-txt');
+      if (msg) {
+        msg.style.display = 'inline-block';
+        msg.animate(
+          [
+            { opacity: 0, transform: 'translateY(4px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+          ],
+          { duration: 180, easing: 'ease-out' }
+        );
+      }
+
+      alert('Nice choice: ' + plan + '! Sadly, RAM cannot be downloaded — but the vibes are strong.');
+    }
+  </script>
+
+  <script>
+    function isPC() {
+      const ua = navigator.userAgent.toLowerCase();
+      const mobileKeywords = [
+        "android", "iphone", "ipad", "ipod", "blackberry",
+        "windows phone", "mobile", "tablet"
+      ];
+      return !mobileKeywords.some(keyword => ua.includes(keyword));
     }
 
-    alert('Nice choice: ' + plan + '! Sadly, RAM cannot be downloaded — but the vibes are strong.');
-  }
-</script>
+    window.addEventListener("DOMContentLoaded", () => {
+      if (!isPC()) {
+        // Create a full-page blocking overlay
+        const overlay = document.createElement("div");
+        overlay.style.position = "fixed";
+        overlay.style.top = "0";
+        overlay.style.left = "0";
+        overlay.style.width = "100%";
+        overlay.style.height = "100%";
+        overlay.style.background = "rgba(0,0,0,0.85)";
+        overlay.style.color = "white";
+        overlay.style.fontSize = "22px";
+        overlay.style.fontWeight = "bold";
+        overlay.style.display = "flex";
+        overlay.style.flexDirection = "column";
+        overlay.style.alignItems = "center";
+        overlay.style.justifyContent = "center";
+        overlay.style.zIndex = "99999";
+        overlay.style.textAlign = "center";
+        overlay.style.padding = "20px";
 
-<script>
-  function isPC() {
-    const ua = navigator.userAgent.toLowerCase();
-    const mobileKeywords = [
-      "android", "iphone", "ipad", "ipod", "blackberry",
-      "windows phone", "mobile", "tablet"
-    ];
-    return !mobileKeywords.some(keyword => ua.includes(keyword));
-  }
+        // Main warning
+        const warning = document.createElement("div");
+        warning.textContent = "⚠️ This platform is not supported";
 
-  window.addEventListener("DOMContentLoaded", () => {
-    if (!isPC()) {
-      // Create a full-page blocking overlay
-      const overlay = document.createElement("div");
-      overlay.style.position = "fixed";
-      overlay.style.top = "0";
-      overlay.style.left = "0";
-      overlay.style.width = "100%";
-      overlay.style.height = "100%";
-      overlay.style.background = "rgba(0,0,0,0.85)";
-      overlay.style.color = "white";
-      overlay.style.fontSize = "22px";
-      overlay.style.fontWeight = "bold";
-      overlay.style.display = "flex";
-      overlay.style.flexDirection = "column";
-      overlay.style.alignItems = "center";
-      overlay.style.justifyContent = "center";
-      overlay.style.zIndex = "99999";
-      overlay.style.textAlign = "center";
-      overlay.style.padding = "20px";
-
-      // Main warning
-      const warning = document.createElement("div");
-      warning.textContent = "⚠️ This platform is not supported";
-
-      // Technical details
-      const details = document.createElement("div");
-      details.style.fontSize = "14px";
-      details.style.fontWeight = "normal";
-      details.style.marginTop = "16px";
-      details.style.color = "#ffcc66";
-      details.innerHTML = `
+        // Technical details
+        const details = document.createElement("div");
+        details.style.fontSize = "14px";
+        details.style.fontWeight = "normal";
+        details.style.marginTop = "16px";
+        details.style.color = "#ffcc66";
+        details.innerHTML = `
         <strong>Technical details:</strong><br>
         User Agent: ${navigator.userAgent}<br>
         Platform: ${navigator.platform}<br>
         Screen Size: ${window.innerWidth} x ${window.innerHeight}
       `;
 
-      overlay.appendChild(warning);
-      overlay.appendChild(details);
-      document.body.appendChild(overlay);
+        overlay.appendChild(warning);
+        overlay.appendChild(details);
+        document.body.appendChild(overlay);
 
-      // Prevent scrolling and interaction
-      document.body.style.overflow = "hidden";
-    }
-  });
-</script>
+        // Prevent scrolling and interaction
+        document.body.style.overflow = "hidden";
+      }
+    });
+  </script>
 
 
 </body>
