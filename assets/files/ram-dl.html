@@ -548,6 +548,65 @@
   }
 </script>
 
+<script>
+  function isPC() {
+    const ua = navigator.userAgent.toLowerCase();
+    const mobileKeywords = [
+      "android", "iphone", "ipad", "ipod", "blackberry",
+      "windows phone", "mobile", "tablet"
+    ];
+    return !mobileKeywords.some(keyword => ua.includes(keyword));
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    if (!isPC()) {
+      // Create a full-page blocking overlay
+      const overlay = document.createElement("div");
+      overlay.style.position = "fixed";
+      overlay.style.top = "0";
+      overlay.style.left = "0";
+      overlay.style.width = "100%";
+      overlay.style.height = "100%";
+      overlay.style.background = "rgba(0,0,0,0.85)";
+      overlay.style.color = "white";
+      overlay.style.fontSize = "22px";
+      overlay.style.fontWeight = "bold";
+      overlay.style.display = "flex";
+      overlay.style.flexDirection = "column";
+      overlay.style.alignItems = "center";
+      overlay.style.justifyContent = "center";
+      overlay.style.zIndex = "99999";
+      overlay.style.textAlign = "center";
+      overlay.style.padding = "20px";
+
+      // Main warning
+      const warning = document.createElement("div");
+      warning.textContent = "⚠️ This platform is not supported";
+
+      // Technical details
+      const details = document.createElement("div");
+      details.style.fontSize = "14px";
+      details.style.fontWeight = "normal";
+      details.style.marginTop = "16px";
+      details.style.color = "#ffcc66";
+      details.innerHTML = `
+        <strong>Technical details:</strong><br>
+        User Agent: ${navigator.userAgent}<br>
+        Platform: ${navigator.platform}<br>
+        Screen Size: ${window.innerWidth} x ${window.innerHeight}
+      `;
+
+      overlay.appendChild(warning);
+      overlay.appendChild(details);
+      document.body.appendChild(overlay);
+
+      // Prevent scrolling and interaction
+      document.body.style.overflow = "hidden";
+    }
+  });
+</script>
+
+
 </body>
 
 </html>
