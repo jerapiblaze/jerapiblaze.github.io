@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download More RAM</title>
+  <style>
+    :root {
+      --bg: #0f1320;
+      --panel: #151a2c;
+      --card: #1b2136;
+      --text: #e6e8f2;
+      --muted: #a9b0c7;
+      --accent: #6aa9ff;
+      --accent-2: #9b7dff;
+      --border: #2a3354;
+      --button: #2d7cff;
+      --button-hover: #1f67d9;
+      --success: #29c468;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(1200px 600px at 10% 0%, #131735 0%, var(--bg) 60%, #0b0e18 100%);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height: 1.5;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 16px rgba(106, 169, 255, 0.6);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 16px 0 8px;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .panel {
+      margin-top: 26px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 980px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .chip {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #2b3b6f, #3f55a7);
+      box-shadow: 0 6px 16px rgba(63, 85, 167, 0.45);
+      position: relative;
+    }
+
+    .chip::after {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border-radius: 3px;
+      background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.25) 0 3px, transparent 3px 6px);
+    }
+
+    .plan-title {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .specs {
+      display: grid;
+      gap: 8px;
+    }
+
+    .spec {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+      padding-bottom: 6px;
+    }
+
+    .spec-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .spec-value {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .cta {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: white;
+      background: var(--button);
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(45, 124, 255, 0.35);
+      transition: transform 0.08s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--button-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 14px;
+      right: -34px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 46px;
+      transform: rotate(35deg);
+      box-shadow: 0 10px 24px rgba(155, 125, 255, 0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 22px;
+    }
+
+    .success-txt {
+      display: none;
+      color: var(--success);
+      font-weight: 700;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <span class="brand-dot"></span>
+        DownloadMoreRAM
+      </div>
+      <h1>Please select the amount of RAM you would like to download</h1>
+      <p class="subtitle">One cannot simply download too much RAM — but hey, we can dream.</p>
+    </header>
+
+    <div class="panel">
+      <div class="grid">
+
+        <!-- 4 GB -->
+        <div class="card">
+          <div class="badge">
+            <div class="chip"></div>
+            <span>Starter</span>
+          </div>
+          <div class="plan-title">4 GB</div>
+          <div class="specs">
+            <div class="spec">
+              <span class="spec-label">Type</span>
+              <span class="spec-value">DDR4-2400</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Timings</span>
+              <span class="spec-value">10-12-10-27</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Voltage</span>
+              <span class="spec-value">1.65V</span>
+            </div>
+          </div>
+          <div class="cta">
+            <button class="btn" onclick="selectPlan('4 GB')">Select plan</button>
+            <span class="success-txt">Added!</span>
+          </div>
+          <div class="note">A modest boost for light multitasking and browsing.</div>
+        </div>
+
+        <!-- 8 GB -->
+        <div class="card">
+          <div class="badge">
+            <div class="chip"></div>
+            <span>Balanced</span>
+          </div>
+          <div class="plan-title">8 GB</div>
+          <div class="specs">
+            <div class="spec">
+              <span class="spec-label">Type</span>
+              <span class="spec-value">DDR4-2400</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Timings</span>
+              <span class="spec-value">10-12-10-27</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Voltage</span>
+              <span class="spec-value">1.65V</span>
+            </div>
+          </div>
+          <div class="cta">
+            <button class="btn" onclick="selectPlan('8 GB')">Select plan</button>
+            <span class="success-txt">Added!</span>
+          </div>
+          <div class="note">Good for everyday work and a few heavier apps.</div>
+          <span class="ribbon">Popular</span>
+        </div>
+
+        <!-- 16 GB -->
+        <div class="card">
+          <div class="badge">
+            <div class="chip"></div>
+            <span>Power</span>
+          </div>
+          <div class="plan-title">16 GB</div>
+          <div class="specs">
+            <div class="spec">
+              <span class="spec-label">Type</span>
+              <span class="spec-value">DDR4-2400</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Timings</span>
+              <span class="spec-value">10-12-10-27</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Voltage</span>
+              <span class="spec-value">1.65V</span>
+            </div>
+          </div>
+          <div class="cta">
+            <button class="btn" onclick="selectPlan('16 GB')">Select plan</button>
+            <span class="success-txt">Added!</span>
+          </div>
+          <div class="note">Smooth creative work, light gaming, and heavy multitasking.</div>
+        </div>
+
+        <!-- 32 GB -->
+        <div class="card">
+          <div class="badge">
+            <div class="chip"></div>
+            <span>Ultra</span>
+          </div>
+          <div class="plan-title">32 GB</div>
+          <div class="specs">
+            <div class="spec">
+              <span class="spec-label">Type</span>
+              <span class="spec-value">DDR4-2400</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Timings</span>
+              <span class="spec-value">10-12-10-27</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Voltage</span>
+              <span class="spec-value">1.65V</span>
+            </div>
+          </div>
+          <div class="cta">
+            <button class="btn" onclick="selectPlan('32 GB')">Select plan</button>
+            <span class="success-txt">Added!</span>
+          </div>
+          <div class="note">For VMs, heavy projects, and “just in case.”</div>
+        </div>
+
+        <!-- DDR5 - 12 GB -->
+      <div class="card">
+          <div class="badge">
+            <div class="chip"></div>
+            <span>Expensive Memoria</span>
+          </div>
+          <div class="plan-title">12 GB</div>
+          <div class="specs">
+            <div class="spec">
+              <span class="spec-label">Type</span>
+              <span class="spec-value">DDR5-4800</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Timings</span>
+              <span class="spec-value">30-36-40-42</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Voltage</span>
+              <span class="spec-value">1.1V</span>
+            </div>
+          </div>
+          <div class="cta">
+            <button class="btn" onclick="selectPlan('12 GB')">Select plan</button>
+            <span class="success-txt">Added!</span>
+          </div>
+          <div class="note">Option for <i>(rich)</i> early adopters and enthusiasts.</div>
+        </div>
+
+                <!-- DDR5 - 48 GB -->
+                <div class="card" style="opacity: 0.6; pointer-events: none; position: relative;">
+                  <div class="badge">
+                    <div class="chip"></div>
+                    <span>Unavailable</span>
+                  </div>
+                  <div class="plan-title">48 GB</div>
+                  <div class="specs">
+                    <div class="spec">
+                      <span class="spec-label">Type</span>
+                      <span class="spec-value">DDR5-4800</span>
+                    </div>
+                    <div class="spec">
+                      <span class="spec-label">Timings</span>
+                      <span class="spec-value">30-36-40-42</span>
+                    </div>
+                    <div class="spec">
+                      <span class="spec-label">Voltage</span>
+                      <span class="spec-value">1.1V</span>
+                    </div>
+                  </div>
+                  <div class="cta">
+                    <button class="btn" disabled>Not available</button>
+                  </div>
+                  <div class="note">This option is temporarily unavailable due to market conditions.</div>
+
+                  <!-- Warning ribbon -->
+                  <span class="ribbon" style="
+                                        background: linear-gradient(135deg, #ff4d4d, #ff7d7d);
+                                        box-shadow: 0 10px 24px rgba(255,77,77,0.35);
+                                      ">
+                    Unavailable
+                  </span>
+                </div>
+
+        <!-- DDR5 - 64 GB -->
+        <div class="card" style="opacity: 0.6; pointer-events: none; position: relative;">
+          <div class="badge">
+            <div class="chip"></div>
+            <span>Unavailable</span>
+          </div>
+          <div class="plan-title">64 GB</div>
+          <div class="specs">
+            <div class="spec">
+              <span class="spec-label">Type</span>
+              <span class="spec-value">DDR5-4800</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Timings</span>
+              <span class="spec-value">30-36-40-42</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Voltage</span>
+              <span class="spec-value">1.1V</span>
+            </div>
+          </div>
+          <div class="cta">
+            <button class="btn" disabled>Not available</button>
+          </div>
+          <div class="note">This option is temporarily unavailable due to market conditions.</div>
+
+          <!-- Warning ribbon -->
+          <span class="ribbon" style="
+                                background: linear-gradient(135deg, #ff4d4d, #ff7d7d);
+                                box-shadow: 0 10px 24px rgba(255,77,77,0.35);
+                              ">
+            Unavailable
+          </span>
+        </div>
+
+        <!-- More is coming soon -->
+        <div class="card" style="opacity: 0.7; position: relative;">
+          <div class="badge">
+            <div class="chip"></div>
+            <span>Upcoming</span>
+          </div>
+          <div class="plan-title">Other options</div>
+          <div class="specs">
+            <div class="spec">
+              <span class="spec-label">Status</span>
+              <span class="spec-value">In development</span>
+            </div>
+            <div class="spec">
+              <span class="spec-label">Reason</span>
+              <span class="spec-value">New options under development</span>
+            </div>
+          </div>
+          <div class="cta">
+            <button class="btn" disabled>Coming soon</button>
+          </div>
+          <div class="note">Future RAM plans will appear here once available.</div>
+
+          <!-- Ribbon -->
+          <span class="ribbon" style="
+            background: linear-gradient(135deg, #ffaa00, #ffcc66);
+            box-shadow: 0 10px 24px rgba(255,170,0,0.35);
+          ">
+            Coming Soon
+          </span>
+        </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <footer>
+      This is a parody page. You can’t actually download RAM.
+    </footer>
+  </div>
+
+<script>
+  function selectPlan(plan) {
+    // Hide any visible "Added!" messages, if present
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      const msg = card.querySelector('.success-txt');
+      if (msg) msg.style.display = 'none';
+    });
+
+    // Find the selected card
+    const card = Array.from(cards).find(
+      c => c.querySelector('.plan-title')?.textContent.trim() === plan
+    );
+    if (!card) return;
+
+    // If the card is visually disabled (e.g., DDR5), show a different alert and exit
+    const isDisabled =
+      getComputedStyle(card).pointerEvents === 'none' ||
+      card.querySelector('.btn')?.disabled;
+    if (isDisabled) {
+      alert('DDR5 is not available at the moment due to high demand and prices.');
+      return;
+    }
+
+    // Show "Added!" only if the element exists
+    const msg = card.querySelector('.success-txt');
+    if (msg) {
+      msg.style.display = 'inline-block';
+      msg.animate(
+        [
+          { opacity: 0, transform: 'translateY(4px)' },
+          { opacity: 1, transform: 'translateY(0)' }
+        ],
+        { duration: 180, easing: 'ease-out' }
+      );
+    }
+
+    alert('Nice choice: ' + plan + '! Sadly, RAM cannot be downloaded — but the vibes are strong.');
+  }
+</script>
+
+</body>
+
+</html>
