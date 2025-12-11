@@ -12,6 +12,8 @@ This is my list of home-made tools, built for my own need.
 
 Checkout <i class="fa-brands fa-github"></i> <a target="_blank" href="https://github.com/jerapiblaze?tab=repositories">All of my public projects (GitHub)</a> <i class="fa-brands fa-github"></i> <a target="_blank" href="https://gist.github.com/jerapiblaze">Quick snippests (GitHub Gists)</a>.
 
+---
+
 ## Micmute-indicator
 
 I often forgot to press "Unmute" button on calls or meetings due to there're no visual indicator on my laptop. This is the indicator for "Muted" state, only shown when there's an app using the microphone.
@@ -19,6 +21,8 @@ I often forgot to press "Unmute" button on calls or meetings due to there're no 
 ![micmute-indicator in action](https://raw.githubusercontent.com/jerapiblaze/micmute-indicator/master/docs/img/demo2.png)
 
 <p><i class="fa-brands fa-github"></i> <a target="_blank" href="https://github.com/jerapiblaze/micmute-indicator">Source code</a></p>
+
+---
 
 ## Notify-all [gist]
 
@@ -30,11 +34,15 @@ A script to send broadcast message to all terminals and desktop sessions.
 
 <p><i class="fa-brands fa-github"></i> <a target="_blank" href="https://gist.github.com/jerapiblaze/211f83700042aa4f41150939292ba6c1">Source code</a></p>
 
+---
+
 ## SuperUser Scripts [gist]
 
 This script contains definitions of bash/zsh functions that I used a lot. Useful for home-server admins.
 
 <p><i class="fa-brands fa-github"></i> <a target="_blank" href="https://gist.github.com/jerapiblaze/306249bcea52d3553518897b28414df4">Source code</a></p>
+
+---
 
 ## Hust-hotspot-autologin
 
@@ -44,6 +52,8 @@ I'm tired about our lab's internal network at HUST being disconnected and requir
 
 <p><i class="fa-brands fa-github"></i> <a target="_blank" href="https://github.com/jerapiblaze/hust-hotspot-autologin">Source code</a></p>
 
+---
+
 ## Tic-tac-toe [gist]
 
 A quick TicTacToe game on a single C++ source code file.
@@ -52,6 +62,7 @@ A quick TicTacToe game on a single C++ source code file.
 
 <p><i class="fa-brands fa-github"></i> <a target="_blank" href="https://gist.github.com/jerapiblaze/882548adcf7a83d193bb69124533707b">Source code</a></p>
 
+---
 
 ## PlainText & DynamicWallpaper [Rainmeter skin]
 
@@ -66,3 +77,5 @@ A <a target="_blank" href="https://www.rainmeter.net/">Rainmeter</a> skins colle
 ![plainText demo](plainText-demo.png)
 
 <p><i class="fa-solid fa-droplet"></i> <a target="_blank" href="/assets/files/plainText_0.1.rmskin">Download skin</a></p>
+
+---
