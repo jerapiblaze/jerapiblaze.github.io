@@ -754,7 +754,7 @@
               class="font-semibold">0123456789abcdef</strong></span>
           <span class="cf-footer-separator sm:hidden">&bull;</span>
           <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
-            Your IP:
+            Accessed URL:
             <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
             <span class="hidden" id="cf-footer-ip">1.1.1.1</span>
             <span class="cf-footer-separator sm:hidden">&bull;</span>
@@ -768,6 +768,12 @@
     </div>
   </div>
   <script>(function () { function d() { var b = a.getElementById("cf-footer-item-ip"), c = a.getElementById("cf-footer-ip-reveal"); b && "classList" in b && (b.classList.remove("hidden"), c.addEventListener("click", function () { c.classList.add("hidden"); a.getElementById("cf-footer-ip").classList.remove("hidden") })) } var a = document; document.addEventListener && a.addEventListener("DOMContentLoaded", d) })();</script>
+  <script>
+    function getCurrentURL() {
+      return window.location.href;
+    }
+    document.getElementById('cf-footer-ip').textContent = getCurrentURL();
+  </script>
 </body>
 
 </html>
