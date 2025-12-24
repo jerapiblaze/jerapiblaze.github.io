@@ -7,9 +7,9 @@ order: 6
 Minh-Thanh Nguyen
 =================
 
-Student in Electronics and Telecommunication, <a target="_blank" href="https://seee.hust.edu.vn/en">School of Electronics and Electrical Engineering</a>, <a target="_blank" href="https://hust.edu.vn/en/">Hanoi University of Science and Technology</a>.
+PhD Canddiate in Computer Science, School of Computer Science and Statistics, Trinity College Dublin.
 
-I have basic knowledge about telecommunication networks (4G, 5G,...). With the vary programming skills from Python, JavaScripts, I can catch up with new working environments quickly. As a collaborative team player, I have experience in both independent and collaborative project work.
+I have knowledge about telecommunication networks (4G, 5G,...). With the vary programming skills from Python, JavaScripts, I can catch up with new working environments quickly. As a collaborative team player, I have experience in both independent and collaborative project work.
 
 ## Contact details
 
