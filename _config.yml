@@ -141,7 +141,7 @@ pwa:
 paginate: 10
 
 scholar:
-  style: ieee-transactions-on-medical-imaging
+  style: ieee-transactions
   source: ./_bibliography
   sort_by: year
   order: decending

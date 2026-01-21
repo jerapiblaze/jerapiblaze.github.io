@@ -1,7 +1,7 @@
 ---
 icon: fa-solid fa-toolbox
-title: My tiny-tools
-order: 2
+title: Tiny-tools
+order: 3
 toc: true
 math: true
 mermaid: true

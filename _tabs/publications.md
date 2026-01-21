@@ -1,17 +1,17 @@
 ---
 icon: fa-solid fa-book
-title: My Publications
+title: Publications
 order: 1
 ---
 
-## Selected publications
+## <i class="fa-solid fa-star"></i> Selected publications
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
 {% bibliography --file selected %}
 <!-- markdownlint-restore -->
 
-## All publications
+## <i class="fa-solid fa-list"></i> All publications
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
