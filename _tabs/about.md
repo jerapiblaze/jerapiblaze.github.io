@@ -26,9 +26,9 @@ I have knowledge about telecommunication networks (4G, 5G,...). With the vary pr
 For your convinience, here are the clocks.
 
 | Location | Timezone | Current time | Note |
-| My location | <i id="main_tz">+0000</i>  | <a id="clock_main"></a> | <i id="main_diff"></i> |
-| My hometown | <i id="sub_tz">+0700</i> | <a id="clock_sub"></a> | <i id="sub_diff"></i>
-| Your location | <i id="you_tz"></i> | <a id="clock_you"></a> | |
+| My location | <i id="main_tz">+0000</i>  | <a id="clock_main" target="_blank" href="/></a> | <i id="main_diff"></i> |
+| My hometown | <i id="sub_tz">+0700</i> | <a id="clock_sub" target="_blank" href="/></a> | <i id="sub_diff"></i>
+| Your location | <i id="you_tz"></i> | <a id="clock_you" target="_blank" href="/></a> | |
 
   <script>
     function parseOffset(str) {
