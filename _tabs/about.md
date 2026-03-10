@@ -40,7 +40,6 @@ For your convinience, here are the clocks.
     }
 
     function getTimezoneOffsetString() {
-      // JS gives offset in minutes *behind* UTC (e.g., GMT+7 → -420)
       const offsetMinutes = new Date().getTimezoneOffset() * -1;
 
       const sign = offsetMinutes >= 0 ? "+" : "-";
@@ -99,7 +98,7 @@ For your convinience, here are the clocks.
       const offsetA = parseTZ(tzA);
       const offsetB = parseTZ(tzB);
 
-      const diff = offsetA - offsetB; // minutes difference
+      const diff = offsetA - offsetB;
 
       if (diff === 0) return "same as you";
 
@@ -119,7 +118,7 @@ For your convinience, here are the clocks.
       document.getElementById("main_diff").textContent = diffTimezone(
         document.getElementById("main_tz").textContent.trim(),
         document.getElementById("you_tz").textContent.trim(),
-      )
+      );
       document.getElementById("sub_diff").textContent = diffTimezone(
         document.getElementById("sub_tz").textContent.trim(),
         document.getElementById("you_tz").textContent.trim(),
