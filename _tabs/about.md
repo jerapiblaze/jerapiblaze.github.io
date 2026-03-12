@@ -7,7 +7,7 @@ order: 7
 Minh-Thanh Nguyen
 =================
 
-PhD Canddiate in Computer Science, School of Computer Science and Statistics, Trinity College Dublin.
+PhD Candidate in Computer Science, School of Computer Science and Statistics, Trinity College Dublin.
 
 I have knowledge about telecommunication networks (4G, 5G,...). With the vary programming skills from Python, JavaScripts, I can catch up with new working environments quickly. As a collaborative team player, I have experience in both independent and collaborative project work.
 
