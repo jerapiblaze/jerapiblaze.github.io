@@ -31,9 +31,6 @@ For your convinience, here are the clocks.
 | Your location | <i id="you_tz"></i> | <a id="clock_you" target="_blank" href="/"></a> | |
 
   <script>
-    const currentTzStr = "Europe/Dublin"
-    const homeTzStr = "Asia/Ho_Chi_Minh"
-
     function tzOffsetFromTzStr(tz, date = new Date()) {
       const formatter = new Intl.DateTimeFormat("en-US", {
         timeZone: tz,
@@ -55,6 +52,8 @@ For your convinience, here are the clocks.
     }
 
     function displayOffset() {
+      const currentTzStr = "Europe/Dublin"
+      const homeTzStr = "Asia/Ho_Chi_Minh"
       document.getElementById("main_tz").textContent = tzOffsetFromTzStr(currentTzStr);
       document.getElementById("sub_tz").textContent = tzOffsetFromTzStr(homeTzStr);
     }
