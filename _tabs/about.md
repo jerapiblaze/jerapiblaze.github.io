@@ -40,8 +40,7 @@ For your convinience, here are the clocks.
 
       const parts = formatter.formatToParts(date);
       const offset = parts.find(p => p.type === "timeZoneName").value;
-
-      // offset comes as "GMT+1" or "UTC+1" → convert to "+0100"
+      
       const match = offset.match(/([+-]\d{1,2})(?::?(\d{2}))?/);
       if (!match) return null;
 
