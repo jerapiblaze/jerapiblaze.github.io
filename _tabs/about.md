@@ -26,8 +26,8 @@ I have knowledge about telecommunication networks (4G, 5G,...). With the vary pr
 For your convinience, here are the clocks.
 
 | Location | GMT Offset | Current time | Note |
-| My location | <i id="main_tz">+0100</i> | <a id="clock_main" target="_blank" href="/"></a> | <i id="main_diff"></i> |
-| My hometown | <i id="sub_tz">+0700</i> | <a id="clock_sub" target="_blank" href="/"></a> | <i id="sub_diff"></i>
+| My location | <i id="main_tz"></i> | <a id="clock_main" target="_blank" href="/"></a> | <i id="main_diff"></i> |
+| My hometown | <i id="sub_tz"></i> | <a id="clock_sub" target="_blank" href="/"></a> | <i id="sub_diff"></i>
 | Your location | <i id="you_tz"></i> | <a id="clock_you" target="_blank" href="/"></a> | |
 
   <script>
@@ -45,18 +45,19 @@ For your convinience, here are the clocks.
       const match = offset.match(/([+-]\d{1,2})(?::?(\d{2}))?/);
       if (!match) return null;
 
-      const hours = match[1].padStart(3, "0");
+      const hours = match[1].length == 3 ? match[1] : `${match[1].slice(0,1)}0${match[1].slice(1)}`;
       const mins = match[2] || "00";
 
       return `${hours}${mins}`;
     }
 
     function displayOffset() {
-      const currentTzStr = "Europe/Dublin"
-      const homeTzStr = "Asia/Ho_Chi_Minh"
+      const currentTzStr = "Europe/Dublin";
+      const homeTzStr = "Asia/Ho_Chi_Minh";
       document.getElementById("main_tz").textContent = tzOffsetFromTzStr(currentTzStr);
       document.getElementById("sub_tz").textContent = tzOffsetFromTzStr(homeTzStr);
     }
+    displayOffset();
 
     function parseOffset(str) {
       const sign = str.startsWith('-') ? -1 : 1;
