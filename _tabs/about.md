@@ -25,12 +25,40 @@ I have knowledge about telecommunication networks (4G, 5G,...). With the vary pr
 
 For your convinience, here are the clocks.
 
-| Location | Timezone | Current time | Note |
-| My location | <i id="main_tz">+0000</i>  | <a id="clock_main" target="_blank" href="/"></a> | <i id="main_diff"></i> |
+| Location | GMT Offset | Current time | Note |
+| My location | <i id="main_tz">+0100</i> | <a id="clock_main" target="_blank" href="/"></a> | <i id="main_diff"></i> |
 | My hometown | <i id="sub_tz">+0700</i> | <a id="clock_sub" target="_blank" href="/"></a> | <i id="sub_diff"></i>
 | Your location | <i id="you_tz"></i> | <a id="clock_you" target="_blank" href="/"></a> | |
 
   <script>
+    const currentTzStr = "Europe/Dublin"
+    const homeTzStr = "Asia/Ho_Chi_Minh"
+
+    function tzOffsetFromTzStr(tz, date = new Date()) {
+      const formatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: tz,
+        hour12: false,
+        timeZoneName: "shortOffset"
+      });
+
+      const parts = formatter.formatToParts(date);
+      const offset = parts.find(p => p.type === "timeZoneName").value;
+
+      // offset comes as "GMT+1" or "UTC+1" → convert to "+0100"
+      const match = offset.match(/([+-]\d{1,2})(?::?(\d{2}))?/);
+      if (!match) return null;
+
+      const hours = match[1].padStart(3, "0");
+      const mins = match[2] || "00";
+
+      return `${hours}${mins}`;
+    }
+
+    function displayOffset() {
+      document.getElementById("main_tz").textContent = tzOffsetFromTzStr(currentTzStr);
+      document.getElementById("sub_tz").textContent = tzOffsetFromTzStr(homeTzStr);
+    }
+
     function parseOffset(str) {
       const sign = str.startsWith('-') ? -1 : 1;
       const clean = str.replace('+','').replace('-','');
