@@ -9,7 +9,7 @@ Minh-Thanh Nguyen
 
 PhD Candidate in Computer Science, School of Computer Science and Statistics, Trinity College Dublin.
 
-I have knowledge about telecommunication networks (4G, 5G,...). With the vary programming skills from Python, JavaScripts, I can catch up with new working environments quickly. As a collaborative team player, I have experience in both independent and collaborative project work.
+I received the B.Eng. degree in Electronics and Telecommunications from Hanoi University of Science and Technology, Vietnam, in 2025. I am currently pursuing a Ph.D. degree in Computer Science at Trinity College Dublin, Ireland. My research interests include 5G network slicing, cloud and edge computing, optimization techniques, and machine learning for networked systems. I also have vary programming skills (i.e., Python, C/C++, C\#), and basic server administration skills.
 
 ## Contact details
 
@@ -20,6 +20,8 @@ I have knowledge about telecommunication networks (4G, 5G,...). With the vary pr
 - <i class="fa-brands fa-orcid"></i> ORCID: <a target="_blank" href="https://orcid.org/0009-0004-5291-029X">0009-0004-5291-029X</a>
 - <i class="fa-brands fa-github"></i> GitHub: <a target="_blank" href="https://github.com/jerapiblaze">jerapiblaze</a>
 - <i class="fa-brands fa-linkedin"></i> LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/mthanh310/">mthanh310</a>
+- <i class="fa fa-user-circle"></i> SCSS profile: <a target="_blank" href="https://www.scss.tcd.ie/~nguyenm2/">nguyenm2</a>
+- <i class="fa fa-user-circle"></i> ICC profile: <a target="_blank" href="https://icclabo.github.io/icc/people/grad/nguyenminh_thanh.html">nguyenminh_thanh</a>
 
 ## Timezones
 
