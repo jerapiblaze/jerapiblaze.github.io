@@ -10,6 +10,8 @@ math: true
 mermaid: false
 media_subpath: /assets/img/posts/2023-10-26-conda-cheatsheet
 pin: false
+image:
+    path: conda.png
 ---
 
 ## Introduction
