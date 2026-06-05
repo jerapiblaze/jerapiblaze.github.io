@@ -2,6 +2,8 @@
 # the default layout is 'page'
 icon: fas fa-info-circle
 order: 7
+custom_scripts: 
+  - "assets/js/about-clock.js"
 ---
 
 Minh-Thanh Nguyen
@@ -35,6 +37,9 @@ For your convinience, here are the clocks.
 | My hometown | <i id="sub_tz"></i> | <a id="clock_sub" target="_blank" href="/"></a> | <i id="sub_diff"></i>
 | Your location | <i id="you_tz"></i> | <a id="clock_you" target="_blank" href="/"></a> | |
 
+> The clock is not right? Check [your system clock](), [my clock](https://j12tee.qzz.io/timedate?html){:target="_blank"} and [world clock](https://www.timeanddate.com/worldclock/){:target="_blank"}.
+
+{% raw %}
   <script>
     function tzOffsetFromTzStr(tz, date = new Date()) {
       const formatter = new Intl.DateTimeFormat("en-US", {
@@ -89,11 +94,30 @@ For your convinience, here are the clocks.
     }
     setYourTz();
 
+    var baseTimestamp = false;
+
+    function updateTimestamp(){
+      if (baseTimestamp === false){
+        fetch("https://j12tee.qzz.io/timedate/json").then(res => {
+          res.json().then(data => {
+            baseTimestamp = new Date(data.iso_string);
+          })
+        }).catch(e => {
+          baseTimestamp = new Date();
+        })
+      } else {
+        baseTimestamp.setSeconds(baseTimestamp.getSeconds() + 1);
+      }
+    }
+
     function updateClock(tzInput, output) {
       const tzStr = document.getElementById(tzInput).textContent.trim();
       const offsetMinutes = parseOffset(tzStr);
 
-      const now = new Date();
+      if (baseTimestamp === false){
+        return;
+      }
+      var now = baseTimestamp;
       const utc = now.getTime() + now.getTimezoneOffset() * 60000;
       const local = new Date(utc + offsetMinutes * 60000);
 
@@ -111,6 +135,8 @@ For your convinience, here are the clocks.
       updateClock("you_tz", "clock_you");
     }
 
+    setInterval(updateTimestamp, 1000);
+    updateTimestamp();
     setInterval(updatePrimaryClock, 1000);
     updatePrimaryClock();
     setInterval(updateSecondaryClock, 1000);
@@ -158,6 +184,7 @@ For your convinience, here are the clocks.
     }
     calcualteDiffs();
   </script>
+{% endraw %}
 
 ## CV
 
