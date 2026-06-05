@@ -37,7 +37,7 @@ For your convinience, here are the clocks.
 | My hometown | <i id="sub_tz"></i> | <a id="clock_sub" target="_blank" href="/"></a> | <i id="sub_diff"></i>
 | Your location | <i id="you_tz"></i> | <a id="clock_you" target="_blank" href="/"></a> | |
 
-> The clock is not right? Check [your system clock](ms-settings:dateandtime){:target="_blank"}, [my clock](https://j12tee.qzz.io/timedate?html){:target="_blank"} and [world clock](https://www.timeanddate.com/worldclock/){:target="_blank"}.
+> The clock is not right? Check [your system clock](ms-settings:dateandtime){:target="_blank"}, [my clock](https://j12tee.qzz.io/timedate/html){:target="_blank"} and [world clock](https://www.timeanddate.com/worldclock/){:target="_blank"}.
 
 {% raw %}
   <script>
