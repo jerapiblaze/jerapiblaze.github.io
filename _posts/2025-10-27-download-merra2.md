@@ -23,9 +23,11 @@ Remeber your `username` and `password`.
 Then, download the file list: [`mrr2_1980_2023.txt`](https://j12tee.qzz.io). You can use your own list from EarthData.
 
 Install `aria2` downloader:
+
 ```bash
 sudo apt install aria2
 ```
+
 If you do not have root access, consider using pre-built binaries or compile it from source. Check [`aria2` homepage](https://aria2.github.io/) for more details.
 
 Modify the following script, save it as `download_merra2.sh`:
