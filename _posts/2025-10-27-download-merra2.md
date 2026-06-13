@@ -20,7 +20,7 @@ First, create an account on [EarthData](https://urs.earthdata.nasa.gov/)
 
 Remeber your `username` and `password`.
 
-Then, download the following file [Merra2 Files list `mrr2_1980_2023.txt`]().
+Then, download the file list: [`mrr2_1980_2023.txt`](https://j12tee.qzz.io). You can use your own list from EarthData.
 
 Install `aria2` downloader:
 ```bash
