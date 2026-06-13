@@ -98,7 +98,7 @@ For your convinience, here are the clocks.
 
     function updateTimestamp(){
       if (baseTimestamp === false){
-        fetch("https://j12tee.qzz.io/timedate/json").then(res => {
+        fetch("https://tapi.j12tee.qzz.io/api/v1/timedate").then(res => {
           res.json().then(data => {
             baseTimestamp = new Date(data.iso_string);
           })
