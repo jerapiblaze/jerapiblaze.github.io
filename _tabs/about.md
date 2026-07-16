@@ -17,7 +17,7 @@ I received the B.Eng. degree in Electronics and Telecommunications from Hanoi Un
 
 - <i class="fa-solid fa-envelope"></i> Email: <a target="_blank" href="mailto:nguyenm2@tcd.ie">nguyenm2 [at] tcd.ie</a>
 - <i class="fa-solid fa-envelope"></i> Email: <a target="_blank" href="mailto:thanh.nm210802@sis.hust.edu.vn">thanh [dot] nm210802 [at] sis.hust.edu.vn</a>
-- <i class="fa-solid fa-envelope"></i> Email: <a target="_blank" href="mailto:minhthanh.nguyen.310@gmail.com">minhthanh [dot] nguyen [dot] 310 [at] gmail.com</a>
+- <i class="fa-solid fa-envelope"></i> Email: <a target="_blank" href="mailto:minhthanh.ng.310@gmail.com">minhthanh [dot] ng [dot] 310 [at] gmail.com</a>
 
 ## Profiles
 
