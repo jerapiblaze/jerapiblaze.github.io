@@ -12,7 +12,7 @@ Belows are the status pages of different systems under my controls.
 {% raw %}
 <details>
 
-<summary>ANSALab System Status</summary>
+<summary>ANSALab Systems</summary>
 
 <a href="https://status-ansalab.j12tee.qzz.io/" target="_blank">Status page</a><br>
 <a href="https://internal-status-ansalab.j12tee.qzz.io" target="_blank">Status page (self-hosted)</a><br>
@@ -38,11 +38,11 @@ Belows are the status pages of different systems under my controls.
 {% raw %}
 <details>
 
-<summary>My own compute cluster</summary>
+<summary>My own compute machine</summary>
 
 <a href="https://tapi.j12tee.qzz.io/updates?key=teeport3000&lock=true" target="_blank">Status update page</a><br>
 <a href="javascript:getUpdate()">Get Update Here</a><br>
-<span id="update-content-box" style="white-space: pre-wrap; font-family: monospace;"> Click the "Get Update Here" button to instantly get status update, or visit the staus update page.</span>
+<span id="update-content-box" style="white-space: pre-wrap; font-family: monospace;"> Click the "Get Update Here" button to instantly get status update, or visit the status update page.</spa>
 
 </details>
 
