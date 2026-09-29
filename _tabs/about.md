@@ -2,6 +2,7 @@
 # the default layout is 'page'
 icon: fas fa-info-circle
 order: 7
+layout: page
 custom_scripts: 
   - "assets/js/about-clock.js"
 ---

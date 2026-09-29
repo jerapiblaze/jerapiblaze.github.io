@@ -1,6 +1,7 @@
 ---
 icon: fa-solid fa-code
 title: Research Data
+layout: page
 order: 2
 ---
 

@@ -1,6 +1,7 @@
 ---
 icon: fa-solid fa-book
 title: Publications
+layout: page
 order: 1
 ---
 

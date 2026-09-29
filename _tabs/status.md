@@ -2,6 +2,7 @@
 # the default layout is 'page'
 icon: fas fa-circle
 title: System Status
+layout: page
 order: 8
 ---
 
