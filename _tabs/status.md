@@ -41,17 +41,17 @@ Belows are the status pages of different systems under my controls.
 
 <summary>My own compute machine</summary>
 
-<a href="https://monitee.j12tee.qzz.io/public-dashboards/4578eb72d06a4f059a6c14385e624154" target="_blank">TeeCluster</a><br>
+<a href="https://monitee.j12tee.qzz.io/public-dashboards/4578eb72d06a4f059a6c14385e624154" target="_blank">Grafana dashboard | TeeCluster</a><br>
 
-<iframe src="https://monitee.j12tee.qzz.io/d-solo/adj2xrh/teecluster?orgId=1&from=1790685739358&to=1790686039358&timezone=browser&showCategory=Panel%20options&dtab=connectivity&panelId=panel-1" width="450" height="200" frameborder="0"></iframe><br>
+<!-- <iframe src="https://monitee.j12tee.qzz.io/d-solo/adj2xrh/teecluster?orgId=1&from=1790685739358&to=1790686039358&timezone=browser&showCategory=Panel%20options&dtab=connectivity&panelId=panel-1" width="450" height="200" frameborder="0"></iframe><br> -->
 
-<a href="https://tapi.j12tee.qzz.io/updates?key=teeport3000&lock=true" target="_blank">Status update page</a><br>
-<a href="javascript:getUpdate()">Get Update Here</a><br>
-<span id="update-content-box" style="white-space: pre-wrap; font-family: monospace;">Click the "Get Update Here" button to instantly get status update, or visit the status update page.</span>
+<!-- <a href="https://tapi.j12tee.qzz.io/updates?key=teeport3000&lock=true" target="_blank">Status update page</a><br> -->
+<!-- <a href="javascript:getUpdate()">Get Update Here</a><br>
+<span id="update-content-box" style="white-space: pre-wrap; font-family: monospace;">Click the "Get Update Here" button to instantly get status update, or visit the status update page.</span> -->
 
 </details>
 
-<script>
+<!-- <script>
 
 function getUpdate(){
     let box = document.getElementById("update-content-box");
@@ -62,7 +62,7 @@ function getUpdate(){
     })
 }
 
-</script>
+</script> -->
 {% endraw %}
 
 ---
