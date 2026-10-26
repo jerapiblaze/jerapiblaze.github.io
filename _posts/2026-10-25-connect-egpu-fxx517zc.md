@@ -17,11 +17,13 @@ pin: false
 
 ## Why?
 
-I just broght a new eGPU, just for curiosity. Well, after many reboots, EC reset, driver reinstalls, ... I finally found a reliable way to connect and disconnect the eGPU on my [TUF Dash F15](https://www.notebookcheck.net/Asus-TUF-Dash-F15-Series.520628.0.html){:target="_blank"} using the [Thunderbolt 4](https://en.wikipedia.org/wiki/Thunderbolt_(interface)#Thunderbolt_4){:target="_blank"} port. I think other models with same TB4 port configuration will share the same procedure.
+I just bought a new eGPU, just for curiosity. After many reboots, EC reset, driver reinstalls, ... I finally found a reliable way to connect and disconnect the eGPU on my [TUF Dash F15](https://www.notebookcheck.net/Asus-TUF-Dash-F15-Series.520628.0.html){:target="_blank"} using the [Thunderbolt 4](https://en.wikipedia.org/wiki/Thunderbolt_(interface)#Thunderbolt_4){:target="_blank"} port. I think other models with same TB4 port configuration will share the same procedure.
+
+> Tl;dr: Never let 2 NVIDIA GPUs appear at the same time.
 
 ## How
 
-> You will need to connect your power adapter, and it should be connected throughout the process. The Type-C PD will not enough.
+> You will need to connect your power adapter, and it should be connected throughout the process. The Type-C PD cannot give enough power to the hungry CPU.
 {: .prompt-info }
 
 ### Preparation
