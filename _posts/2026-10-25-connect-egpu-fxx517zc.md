@@ -32,7 +32,7 @@ First of all, use [G-Helper](https://github.com/seerge/g-helper){:target="_blank
 
 Using G-Helper, disable all Asus services (very important, since these nasty things will prevent the initailization of the eGPU).
 
-> Install the latest original driver from ASUS homepage. Do not use any other drivers. Ignore and never apply driver updates from NVIDA app!
+> Install the latest original graphics driver from ASUS homepage. Do not use any other drivers. Ignore and never apply driver updates from NVIDA app!
 {: .prompt-warning }
 
 Now, you are ready to connect.
@@ -65,7 +65,7 @@ To disconnect the eGPU, do the followings:
 
 Great, now your dGPU, HDMI port, lower USB-C port are happy to work again.
 
-> You may need to restart GPU-Z and other hardware monitor tools in order to make they work properly again.
+> You may need to restart GPU-Z and other hardware monitor tools in order to make them work properly again.
 {: .prompt-info }
 
 ![Happy dGPU](dgpu-devicemgmt.png)
@@ -76,7 +76,7 @@ Note about **power strip off**: Since the laptop now only have to handle power a
 
 ![Power limit in G-Helper](ghelper-powerlimit.png)
 
-Note about **PCIe speeds**: Although via GPU-Z, you will see your GPU is connected with PCIe 4 x4 or even 5 x4, it is actually connect through TB4 PCIe tunnel, which is capped at 40Gbps down/40Gbps up (equivalent to PCIe 3x4), see screenshots below. So the performance gain will be... very vavies compared to the dGPU. If you are hoping a better gain in FPS gaming, no it will not help due to high latency. If you do not need any low-latency and just want a higher frame rate and better image quality, the eGPU will be a costly but worth solution. Or even better, local SLMs/LLMs, but in this RAMpocalype era, you will probaly need to pay a great price.
+Note about **PCIe speeds**: Although via GPU-Z, you will see your GPU is connected with PCIe 4 x4 or even 5 x4, it is actually connect through TB4 PCIe tunnel, which is capped at 40Gbps down/40Gbps up (equivalent to PCIe 3x4), see screenshots below. So the performance gain will be... very varies compared to the dGPU. If you are hoping a better gain in FPS gaming, eGPUs will not help due to high latency. If you do not need any low-latency and just want a higher frame rate and better image quality, the eGPU will be a costly but worth solution. Or even better, local SLMs/LLMs, but in this RAMpocalype era, you will probaly need to pay a great price.
 
 ![GPU-Z check](gpuz.png)
 
