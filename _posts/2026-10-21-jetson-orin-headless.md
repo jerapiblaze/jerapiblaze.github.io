@@ -5,7 +5,7 @@ categories: [Blogging, Tutorial]
 tags: [ubuntu, jetson orin, headless]
 author: j12t
 toc: true
-comments: false
+comments: true
 math: true
 mermaid: true
 # image:

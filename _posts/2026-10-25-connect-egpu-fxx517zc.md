@@ -5,7 +5,7 @@ categories: [Blogging, Tutorial]
 tags: [windows, egpu]
 author: j12t
 toc: true
-comments: false
+comments: true
 math: true
 mermaid: true
 media_subpath: /assets/img/posts/2026-10-25-connect-egpu-fxx517zc
