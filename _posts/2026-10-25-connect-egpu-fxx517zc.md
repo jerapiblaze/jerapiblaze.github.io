@@ -32,7 +32,7 @@ First of all, use [G-Helper](https://github.com/seerge/g-helper){:target="_blank
 
 Using G-Helper, disable all Asus services (very important, since these nasty things will prevent the initailization of the eGPU).
 
-> Install the latest original driver from ASUS homepage. Do not use any drivers which is newer than the drivers from ASUS page. Ignore driver updates from NVIDA app!
+> Install the latest original driver from ASUS homepage. Do not use any other drivers. Ignore and never apply driver updates from NVIDA app!
 {: .prompt-warning }
 
 Now, you are ready to connect.
